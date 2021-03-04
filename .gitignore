@@ -1,0 +1,7 @@
+*.zip
+*.jar
+*.log
+*.class
+bin/*
+build/*
+
