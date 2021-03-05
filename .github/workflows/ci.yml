@@ -18,13 +18,12 @@ jobs:
         java-version: 15.0.2
         java-package: jdk
     - name: Install Ghidra
-      uses: er28-0652/setup-ghidra@master
-      with:
-        version: "latest"
-    - name: Build
       run: |
-        export GHIDRA_INSTALL_DIR=$(GHIDRA_INSTALL_PATH)
-        gradle
+        - wget https://ghidra-sre.org/ghidra_9.2.2_PUBLIC_20201229.zip
+        - mkdir -p /opt/ghidra
+        - sudo unzip ghidra_9.2.2_PUBLIC_20201229.zip -d /opt/ghidra
+    - name: Build
+      run: GHIDRA_INSTALL_DIR=/opt/ghidra gradle
     - name: Upload JAR
       uses: actions/upload-artifact@v2.2.0
       with:
