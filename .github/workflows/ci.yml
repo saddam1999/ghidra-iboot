@@ -19,9 +19,9 @@ jobs:
         java-package: jdk
     - name: Install Ghidra
       run: |
-        - wget https://ghidra-sre.org/ghidra_9.2.2_PUBLIC_20201229.zip
-        - mkdir -p /opt/ghidra
-        - sudo unzip ghidra_9.2.2_PUBLIC_20201229.zip -d /opt/ghidra
+        wget https://ghidra-sre.org/ghidra_9.2.2_PUBLIC_20201229.zip
+        mkdir -p /opt/ghidra
+        sudo unzip ghidra_9.2.2_PUBLIC_20201229.zip -d /opt/ghidra
     - name: Build
       run: GHIDRA_INSTALL_DIR=/opt/ghidra gradle
     - name: Upload JAR
