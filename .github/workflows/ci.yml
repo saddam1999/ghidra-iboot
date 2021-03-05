@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up JDK 1.8
+    - name: Set up JDK
       uses: actions/setup-java@v1
       with:
         java-version: 15.0.2
@@ -22,7 +22,9 @@ jobs:
       with:
         version: "latest"
     - name: Build
-      run: GHIDRA_INSTALL_DIR=$(GHIDRA_INSTALL_PATH) gradle
+      run: |
+        export GHIDRA_INSTALL_DIR=$(GHIDRA_INSTALL_PATH)
+        gradle
     - name: Upload JAR
       uses: actions/upload-artifact@v2.2.0
       with:
