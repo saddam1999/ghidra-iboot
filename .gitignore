@@ -1,7 +1,16 @@
-*.zip
-*.jar
-*.log
-*.class
-bin/*
-build/*
+# Artifacts
+/bin/
+/build/
+/dist/
 
+# IntelliJ IDEA
+/.idea/
+
+# Visual Studio Code
+/.vscode/
+
+# Gradle
+/.gradle/
+/gradle/
+/gradlew
+/gradlew.bat
