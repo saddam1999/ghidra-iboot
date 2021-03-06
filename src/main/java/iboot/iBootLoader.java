@@ -22,7 +22,7 @@ public class iBootLoader extends AbstractLibrarySupportLoader {
 	@Override
 	public Collection<LoadSpec> findSupportedLoadSpecs(ByteProvider provider) throws IOException {
 		var result = new ArrayList<LoadSpec>();
-		result.add(new LoadSpec(this, 0, null, true));
+		iBootVersion version = new iBootVersion(provider);
 		return result;
 	}
 
