@@ -21,18 +21,19 @@ public class iBootLoader extends AbstractLibrarySupportLoader {
 
 	@Override
 	public Collection<LoadSpec> findSupportedLoadSpecs(ByteProvider provider) throws IOException {
-		return new ArrayList<>();
+		var result = new ArrayList<LoadSpec>();
+		result.add(new LoadSpec(this, 0, null, true));
+		return result;
 	}
 
 	@Override
 	protected void load(ByteProvider provider, LoadSpec loadSpec, List<Option> options,
-			Program program, TaskMonitor monitor, MessageLog log)
-			throws CancelledException, IOException {
+						Program program, TaskMonitor monitor, MessageLog log) throws CancelledException, IOException {
 	}
 
 	@Override
-	public List<Option> getDefaultOptions(ByteProvider provider, LoadSpec loadSpec,
-			DomainObject domainObject, boolean isLoadIntoProgram) {
+	public List<Option> getDefaultOptions(ByteProvider provider, LoadSpec loadSpec, DomainObject domainObject,
+										  boolean isLoadIntoProgram) {
 		return super.getDefaultOptions(provider, loadSpec, domainObject, isLoadIntoProgram);
 	}
 
